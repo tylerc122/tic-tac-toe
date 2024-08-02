@@ -56,6 +56,19 @@ body {
   padding: 0;
 }
 
+.board-container {
+  position: relative;
+}
+
+.board {
+  filter: none;
+  transition: filter 0.3s;
+}
+
+.board-blur {
+  filter: blur(5px);
+}
+
 .square {
   background: #fff;
   border: 1px solid #611d1d;
@@ -80,10 +93,12 @@ body {
 .status {
   margin-bottom: 10px;
 }
+
 .game {
   display: flex;
   flex-direction: row;
 }
+
 .game-container {
   display: flex;
   justify-content: center;
@@ -92,11 +107,12 @@ body {
   position: relative;
   padding-top: 50px;
 }
+
 .winner-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-55%, -34%);
+  transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid #999;
   padding: 20px;
@@ -105,11 +121,16 @@ body {
   text-align: center;
   z-index: 10;
   color: red;
+  box-sizing: border-box;
 }
+
 .game-info {
   margin-left: 20px;
 }
-.replay-button {
+
+.replay-button,
+.toggle-blur-button,
+.return-win-screen-button {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
@@ -123,12 +144,17 @@ body {
   margin-right: auto;
 }
 
-.replay-button:hover{
+.replay-button:hover,
+.toggle-blur-button:hover,
+.return-win-screen-button:hover {
   background-color: #45a049;
 }
 
-.blur{
+.blur {
   filter: blur(5px);
+}
+
+.no-pointer-events {
   pointer-events: none;
 }
 
